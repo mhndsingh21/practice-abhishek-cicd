@@ -8,6 +8,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
+        withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')])
         sh 'echo passed'
         //git branch: 'main', url: 'https://github.com/mhndsingh21/practice-abhishek-cicd.git'
       }
